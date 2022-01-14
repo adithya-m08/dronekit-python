@@ -23,7 +23,7 @@ from jinja2 import Environment, FileSystemLoader
 import argparse
 parser = argparse.ArgumentParser(description='Creates a CherryPy based web application that displays a mapbox map to let you view the current vehicle position and send the vehicle commands to fly to a particular latitude and longitude. Will start and connect to SITL if no connection string specified.')
 parser.add_argument('--connect',
-                    help="vehicle connection target string. If not specified, SITL is automatically started and used.")
+                    help="vehicle connection target string. If not specified, SITL is automatically started and used.", default="127.0.0.1:14551")
 args = parser.parse_args()
 
 connection_string = args.connect
